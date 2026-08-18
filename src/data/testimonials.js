@@ -1,0 +1,42 @@
+export const testimonials = [
+  {
+    id: 1,
+    name: 'Salman R.',
+    role: 'Architect',
+    avatar: 'SR',
+    rating: 5,
+    quote: 'Every cup feels intentional. The flavor, the atmosphere, and the small details are truly exceptional. Slowpour has become my second office.',
+  },
+  {
+    id: 2,
+    name: 'Daniel N.',
+    role: 'Writer',
+    avatar: 'DN',
+    rating: 5,
+    quote: 'This place never disappoints. Whether I\'m working or just relaxing, Slowpour delivers great coffee and a welcoming atmosphere every time.',
+  },
+  {
+    id: 3,
+    name: 'Arinda K.',
+    role: 'Designer',
+    avatar: 'AK',
+    rating: 5,
+    quote: 'The Cold Brew Classic is unmatched. I\'ve tried everywhere in the city — nothing compares. The space is beautiful and the team is wonderful.',
+  },
+  {
+    id: 4,
+    name: 'Maya T.',
+    role: 'Photographer',
+    avatar: 'MT',
+    rating: 5,
+    quote: 'Coffee made slowly, served with care. You can feel that every detail has been thought through — from the cup choice to the music.',
+  },
+  {
+    id: 5,
+    name: 'Rizki F.',
+    role: 'Developer',
+    avatar: 'RF',
+    rating: 5,
+    quote: 'My go-to for deep work sessions. The Caramel Ribbon hits different when you have a deadline. Thank you, Slowpour.',
+  },
+];
