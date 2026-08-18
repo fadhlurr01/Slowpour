@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Minus, Plus, ShoppingBag, ArrowLeft } from 'lucide-react';
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { imgUrl } from '../utils/imageUrl';
 
 function formatPrice(p) {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(p);
@@ -87,7 +88,7 @@ export default function ProductDetailPage() {
           >
             <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-warm-beige/10">
               <img
-                src={product.image}
+                src={imgUrl(product.image)}
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
@@ -243,7 +244,7 @@ export default function ProductDetailPage() {
               {related.map(rp => (
                 <Link key={rp.id} to={`/menu/${rp.slug}`} className="group block">
                   <div className="rounded-xl overflow-hidden h-56 mb-4">
-                    <img src={rp.image} alt={rp.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={imgUrl(rp.image)} alt={rp.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <p className="font-sans text-xs text-charcoal/40 tracking-widest uppercase mb-1">{rp.category}</p>
                   <div className="flex items-center justify-between">

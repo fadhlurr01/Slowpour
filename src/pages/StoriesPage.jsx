@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Clock, ArrowUpRight } from 'lucide-react';
 import { stories } from '../data/stories';
+import { imgUrl } from '../utils/imageUrl';
 
 const allCategories = ['All', ...new Set(stories.map(s => s.category))];
 
@@ -37,7 +38,7 @@ export default function StoriesPage() {
           >
             <Link to={`/stories/${featured.slug}`} className="group grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
               <div className="rounded-2xl overflow-hidden h-72 md:h-96">
-                <img src={featured.image} alt={featured.title}
+                <img src={imgUrl(featured.image)} alt={featured.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div>
@@ -94,7 +95,7 @@ export default function StoriesPage() {
             >
               <Link to={`/stories/${story.slug}`} className="group block">
                 <div className="rounded-xl overflow-hidden h-52 mb-4">
-                  <img src={story.image} alt={story.title}
+                  <img src={imgUrl(story.image)} alt={story.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-600" />
                 </div>
                 <div className="flex items-center gap-2 mb-3">

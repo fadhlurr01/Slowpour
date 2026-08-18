@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { imgUrl } from '../../utils/imageUrl';
 
 export default function BeansBanner() {
   const ref = useRef(null);
@@ -72,7 +73,7 @@ export default function BeansBanner() {
 
             <div className="h-full min-h-[320px] rounded-l-2xl overflow-hidden">
               <img
-                src="/images/coffee-beans.jpg"
+                src={imgUrl('/images/coffee-beans.jpg')}
                 alt="Premium coffee beans from single origin farms"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />

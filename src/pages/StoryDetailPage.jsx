@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, ChevronRight, ArrowLeft } from 'lucide-react';
 import { stories } from '../data/stories';
+import { imgUrl } from '../utils/imageUrl';
 
 export default function StoryDetailPage() {
   const { slug } = useParams();
@@ -30,7 +31,7 @@ export default function StoryDetailPage() {
           initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.2, ease: [0.19, 1, 0.22, 1] }}
-          src={story.image}
+          src={imgUrl(story.image)}
           alt={story.title}
           className="w-full h-full object-cover"
         />
@@ -123,7 +124,7 @@ export default function StoryDetailPage() {
               {related.map(s => (
                 <Link key={s.id} to={`/stories/${s.slug}`} className="group block">
                   <div className="rounded-xl overflow-hidden h-48 mb-4">
-                    <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={imgUrl(s.image)} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <span className="section-label text-xs text-sage block mb-2">{s.category}</span>
                   <h3 className="font-serif text-lg text-charcoal group-hover:text-dark-green transition-colors">{s.title}</h3>

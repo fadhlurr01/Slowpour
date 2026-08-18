@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Minus, Plus, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
+import { imgUrl } from '../../utils/imageUrl';
 
 function formatPrice(price) {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(price);
@@ -78,7 +79,7 @@ export default function CartDrawer() {
                         className="flex gap-4 p-3 bg-white rounded-xl shadow-sm"
                       >
                         <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0">
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                          <img src={imgUrl(item.image)} alt={item.name} className="w-full h-full object-cover" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="font-sans text-sm font-600 text-charcoal truncate">{item.name}</h3>

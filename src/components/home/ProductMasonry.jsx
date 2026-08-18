@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { products } from '../../data/products';
+import { imgUrl } from '../../utils/imageUrl';
 
 function formatPrice(price) {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(price);
@@ -77,7 +78,7 @@ export default function ProductMasonry() {
                 <Link to={`/menu/${product.slug}`} className="block w-full h-full">
                   <div className={`w-full ${layout.height} relative overflow-hidden rounded-xl`}>
                     <img
-                      src={product.image}
+                      src={imgUrl(product.image)}
                       alt={product.name}
                       className="product-card-img absolute inset-0 w-full h-full"
                     />

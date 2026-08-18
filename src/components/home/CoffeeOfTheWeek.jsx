@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ShoppingBag } from 'lucide-react';
 import { weeklyProducts } from '../../data/products';
 import { useCart } from '../../context/CartContext';
+import { imgUrl } from '../../utils/imageUrl';
 
 function formatPrice(price) {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(price);
@@ -57,7 +58,7 @@ export default function CoffeeOfTheWeek() {
                 className="absolute inset-0"
               >
                 <img
-                  src={product.image}
+                  src={imgUrl(product.image)}
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />

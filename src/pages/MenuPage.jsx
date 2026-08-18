@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SlidersHorizontal, X, ArrowUpRight } from 'lucide-react';
 import { products, categories } from '../data/products';
 import { useCart } from '../context/CartContext';
+import { imgUrl } from '../utils/imageUrl';
 
 function formatPrice(p) {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(p);
@@ -161,7 +162,7 @@ export default function MenuPage() {
                   <Link to={`/menu/${product.slug}`} className={`block ${ht}`}>
                     <div className={`relative w-full h-full overflow-hidden rounded-xl`}>
                       <img
-                        src={product.image}
+                        src={imgUrl(product.image)}
                         alt={product.name}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />

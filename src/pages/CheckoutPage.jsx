@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight, User, Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { imgUrl } from '../utils/imageUrl';
 
 function formatPrice(p) {
   return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(p);
@@ -154,7 +155,7 @@ export default function CheckoutPage() {
                   {items.map(item => (
                     <div key={item.key} className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm">
                       <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                        <img src={imgUrl(item.image)} alt={item.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1">
                         <p className="font-sans text-sm font-600 text-charcoal">{item.name}</p>

@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { imgUrl } from '../../utils/imageUrl';
 
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 30 },
@@ -106,7 +107,7 @@ export default function FeaturedExperience() {
               className="w-full lg:w-[85%] h-80 md:h-[440px] rounded-2xl overflow-hidden shadow-2xl shadow-charcoal/10"
             >
               <img
-                src="/images/cold-brew.jpg"
+                src={imgUrl('/images/cold-brew.jpg')}
                 alt="Cold brew coffee experience"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -120,7 +121,7 @@ export default function FeaturedExperience() {
               className="w-40 h-40 md:w-52 md:h-52 rounded-xl overflow-hidden shadow-xl absolute bottom-0 -left-4 lg:-left-10 border-4 border-soft-cream"
             >
               <img
-                src="/images/cappuccino.jpg"
+                src={imgUrl('/images/cappuccino.jpg')}
                 alt="Cappuccino latte art detail"
                 className="w-full h-full object-cover"
               />

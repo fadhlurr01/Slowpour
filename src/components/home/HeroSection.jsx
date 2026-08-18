@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Coffee, Flame, Snowflake } from 'lucide-react';
+import { imgUrl } from '../../utils/imageUrl';
 
 const categories = [
   { icon: Flame, label: 'Hot Coffee', to: '/menu?cat=Hot+Coffee' },
@@ -116,7 +117,7 @@ export default function HeroSection() {
               style={{ borderRadius: '50% 50% 50% 50% / 40% 40% 60% 60%' }}
             >
               <img
-                src="/images/caramel-ribbon.jpg"
+                src={imgUrl('/images/caramel-ribbon.jpg')}
                 alt="Caramel Ribbon - signature iced coffee"
                 className="w-full h-full object-cover"
               />
